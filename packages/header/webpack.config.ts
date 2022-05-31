@@ -9,14 +9,16 @@ import { moduleFederation } from "./module-federation";
 const configuration: Configuration & DevServerConfiguration = {
 	entry: "./src/index.ts",
 	mode: "development",
+	output: {
+		publicPath: "http://localhost:8081/",
+	},
 	devServer: {
-		port: 3002,
+		port: 8081,
 		open: true,
-		headers: {
-			"Access-Control-Allow-Origin": "*",
+		historyApiFallback: {
+			index: "/index.html",
 		},
 	},
-
 	plugins: [
 		new container.ModuleFederationPlugin(moduleFederation),
 		new HtmlWebpackPlugin({

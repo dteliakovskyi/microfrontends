@@ -1,26 +1,18 @@
-import { Suspense, lazy } from "react";
+import { FC } from "react";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { Header } from "../components/Header";
+import { Offers } from "../components/Offers";
 
-const Header = lazy(() => import("header/Module"));
-const Offers = lazy(() => import("offers/Module"));
-
-const App = () => (
-	<>
-		<header color='#fff'>CONTAINER</header>
-		<div>
-			<Suspense fallback={<div>Loading</div>}>
-				<div>
-					<h1 color='#6F60EA'>APP-1</h1>
-					<Header />
-				</div>
-			</Suspense>
-			<Suspense fallback={<div>Loading</div>}>
-				<div>
-					<h1 color='#6F60EA'>APP-2</h1>
-					<Offers />
-				</div>
-			</Suspense>
-		</div>
-	</>
-);
-
-export default App;
+export const App: FC = () => {
+	return (
+		<BrowserRouter>
+			<header color='#fff'>CONTAINER</header>
+			<Link to={"/header"}>To Header</Link>
+			<Link to={"/offers"}>To Offers</Link>
+			<Switch>
+				<Route path='/header' component={Header} />
+				<Route path='/offers' component={Offers} />
+			</Switch>
+		</BrowserRouter>
+	);
+};

@@ -9,9 +9,15 @@ import { moduleFederation } from "./module-federation";
 const configuration: Configuration & DevServerConfiguration = {
 	entry: "./src/index.ts",
 	mode: "development",
+	output: {
+		publicPath: "http://localhost:8080/",
+	},
 	devServer: {
 		port: 8080,
 		open: true,
+		historyApiFallback: {
+			index: "/index.html",
+		},
 	},
 
 	plugins: [

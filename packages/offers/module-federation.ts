@@ -4,9 +4,7 @@ export const moduleFederation = {
 	name: "offers",
 	filename: "offersRemoteEntry.js",
 	exposes: {
-		"./Module": "./src/app",
+		"./Module": "./src/bootstrap",
 	},
-	shared: {
-		...dependencies,
-	},
+	shared: dependencies,
 };
