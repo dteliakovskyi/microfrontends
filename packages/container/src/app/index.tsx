@@ -11,7 +11,7 @@ export const App: FC = () => {
 			<Link to={"/offers"}>To Offers</Link>
 			<Switch>
 				<Route path='/header' component={Header} />
-				<Route path='/offers' component={Offers} />
+				<Route path='/' component={Offers} />
 			</Switch>
 		</BrowserRouter>
 	);

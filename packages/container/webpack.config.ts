@@ -28,4 +28,4 @@ const configuration: Configuration & DevServerConfiguration = {
 	],
 };
 
-module.exports = merge(commonConfig, configuration);
+export default merge(commonConfig, configuration);
