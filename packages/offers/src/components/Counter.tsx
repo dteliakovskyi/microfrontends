@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const Counter = () => {
+export const Counter = () => {
 	const [count, setCount] = useState(0);
 
 	return (
@@ -10,8 +11,9 @@ const Counter = () => {
 			</p>
 			<p>Your click count : {count} </p>
 			<button onClick={() => setCount(count + 1)}>Click me</button>
+			<p>
+				<Link to='/component'>LINK to component</Link>
+			</p>
 		</div>
 	);
 };
-
-export default Counter;

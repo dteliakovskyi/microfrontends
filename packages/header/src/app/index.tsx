@@ -2,7 +2,7 @@ import CounterAppOne from "../components/CounterAppOne";
 
 const App = () => (
 	<div>
-		<div>APP-1</div>
+		<div>Header</div>
 		<div>
 			<CounterAppOne />
 		</div>
